@@ -25,7 +25,7 @@ for i in range(len(rooster)):
         quotient_aug = quotient_aug // 10
         digit_sum_aug += remainder_aug
     if digit_sum_aug % 7 == 0:
-        numbers_sum_aug += rooster[i]
+        numbers_sum_aug += rooster[i] + 17
 
 
 # print(rooster)
