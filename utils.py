@@ -23,11 +23,11 @@ def currency_rates(currency_code):
         i += 1
     print(f'Exchange rate of {currency_code} is {value}')
 
-
-currency_rates('EUR')
-currency_rates('USD')
-currency_rates('STE')
-currency_rates('mex')
-currency_rates('cad')
-currency_rates('dKk')
+if __name__ == '__main__':
+    currency_rates('USD')
+    currency_rates('EUR')
+    currency_rates('STE')
+    currency_rates('mex')
+    currency_rates('cad')
+    currency_rates('dKk')
 
