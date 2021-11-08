@@ -1,26 +1,25 @@
 
 import requests
 import xml.etree.ElementTree as ET
-import datetime
+from decimal import *
 
 url = 'http://www.cbr.ru/scripts/XML_daily.asp'
-response = requests.get(url)
-data = response.content
-tree = ET.fromstring(data)
 
-date = tree.attrib
-rate_date = date['Date']
-rate_date = datetime.datetime.strptime(rate_date, "%d.%m.%Y").date()
-print(f'Exchange rate at {rate_date}')
+"""Документ с курсами валют скачан с указанного сайта"""
+
+tree = ET.parse(r'C:\Users\evgue\OneDrive\Документы\GeekBrains\Python\XML_daily.asp')
+root = tree.getroot()
 
 def currency_rates(currency_code):
     i = 0
     value = None
-    for code in tree.iter('CharCode'):
+    for code in root.iter('CharCode'):
         if code.text == currency_code.upper():
-            value = tree[i][4].text
-            value = float(value.replace(',', '.'))
+            value = root[i][4].text
+            value = Decimal(value.replace(',', '.'))
+
         i += 1
+
     print(f'Exchange rate of {currency_code} is {value}')
 
 

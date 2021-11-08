@@ -1,17 +1,12 @@
 
 import requests
 import xml.etree.ElementTree as ET
-import datetime
+from decimal import *
 
 url = 'http://www.cbr.ru/scripts/XML_daily.asp'
 response = requests.get(url)
 data = response.content
 tree = ET.fromstring(data)
-
-date = tree.attrib
-rate_date = date['Date']
-rate_date = datetime.datetime.strptime(rate_date, "%d.%m.%Y").date()
-print(f'Exchange rate at {rate_date}')
 
 def currency_rates(currency_code):
     i = 0
