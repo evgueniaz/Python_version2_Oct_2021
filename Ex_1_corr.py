@@ -1,4 +1,10 @@
-
+<<<<<<< Updated upstream
+# Выяснить тип результата выражений:
+print(type(15 * 3))
+print(type(15 / 3))
+print(type(15 // 2))
+print(type(15 ** 2))
+=======
 
 
 def num_translate(num):
@@ -10,4 +16,4 @@ def num_translate(num):
         return print('None')
 
 num_translate('five')
-
+>>>>>>> Stashed changes
