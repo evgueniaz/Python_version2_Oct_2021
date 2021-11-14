@@ -1,4 +1,5 @@
 
+
 lists = {}
 def thesaurus(*names):
     for el in names:
